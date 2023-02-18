@@ -29,7 +29,7 @@ header {
 }
 
 #Instructions {
-    background-color: var(--color-three);
+    background-color: var(--color-four);
     width: 10vw;
     border: 2px solid black;
     margin-right: 2vw;
@@ -37,7 +37,7 @@ header {
 }
 
 #brushSizeHolder {
-    background-color: var(--color-three);
+    background-color: var(--color-four);
     width: 10vw;
     border: 2px solid black;
     margin-left: 2vw;
