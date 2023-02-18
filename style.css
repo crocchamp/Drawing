@@ -22,10 +22,15 @@ header {
 }
 
 #colorHolder {
-    background-color: var();
+    background-color: var(--color-three);
+}
+
+#brushSizeHolder {
+    background-color: var(--color-three);
 }
 
 canvas {
     height: 100%;
     width: 100%;
+    background-color: white;
 }
