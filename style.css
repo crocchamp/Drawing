@@ -55,7 +55,7 @@ canvas {
 #palette {
     display: flex;
     justify-content: space-around;
-    background-color: white;
+    background-color: #cfcfc4;
     justify-self: center;
     margin-left: 10vw;
     margin-right: 10vw;
