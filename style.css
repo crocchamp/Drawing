@@ -53,5 +53,6 @@ canvas {
 #palette {
     display: flex;
     width: 80vw;
-    justify-content: space-between;
+    justify-content: space-around;
+    background-color: white;
 }
