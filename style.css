@@ -1,16 +1,24 @@
 body {
     display: flex;
     flex-direction: column;
+    background-color: ;
+
+    --color-one:#FAD6A5;
+    --color-two:#7B8FA1;
+    --color-three:#CFB997;
+    --color-four:#567189;
 }
 
 header {
     display: flex;
     justify-content: center;
+    background-color: ;
 }
 
 #artHolder {
     display: flex;
     justify-content: space-between;
+    
 }
 
 canvas {
