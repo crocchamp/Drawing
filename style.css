@@ -59,4 +59,7 @@ canvas {
     justify-self: center;
     margin-left: 10vw;
     margin-right: 10vw;
+    margin-top: 2vh;
+    border: 2px solid black;
+    border-radius: 20px;
 }
