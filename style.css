@@ -26,7 +26,7 @@ header {
     
 }
 
-#colorHolder {
+#Instructions {
     background-color: var(--color-three);
     width: 10vw;
     border: 2px solid black;
