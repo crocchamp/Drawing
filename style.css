@@ -7,6 +7,8 @@ body {
     --color-two:#A0C3D2;
     --color-three:#F7F5EB;
     --color-four:#EAE0DA;
+
+    justify-content: center;
 }
 
 header {
@@ -22,7 +24,7 @@ header {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 70vh;
+    height: 75vh;
     
 }
 
@@ -52,7 +54,9 @@ canvas {
 
 #palette {
     display: flex;
-    width: 80vw;
     justify-content: space-around;
     background-color: white;
+    justify-self: center;
+    margin-left: 10vw;
+    margin-right: 10vw;
 }
