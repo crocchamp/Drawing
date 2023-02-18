@@ -1,24 +1,28 @@
 body {
     display: flex;
     flex-direction: column;
-    background-color: ;
+    background-color: var(--color-one);
 
-    --color-one:#FAD6A5;
-    --color-two:#7B8FA1;
-    --color-three:#CFB997;
-    --color-four:#567189;
+    --color-one:#EAC7C7;
+    --color-two:#A0C3D2;
+    --color-three:#F7F5EB;
+    --color-four:#EAE0DA;
 }
 
 header {
     display: flex;
     justify-content: center;
-    background-color: ;
+    background-color: var(--color-two);
 }
 
 #artHolder {
     display: flex;
     justify-content: space-between;
     
+}
+
+#colorHolder {
+    background-color: var();
 }
 
 canvas {
