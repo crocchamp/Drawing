@@ -14,6 +14,7 @@ header {
     justify-content: center;
     background-color: var(--color-two);
     border: 2px solid black;
+    margin-bottom: 2vh;
 }
 
 #artHolder {
@@ -28,12 +29,14 @@ header {
     background-color: var(--color-three);
     width: 10vw;
     border: 2px solid black;
+    margin-right: 2vw;
 }
 
 #brushSizeHolder {
     background-color: var(--color-three);
     width: 10vw;
     border: 2px solid black;
+    margin-left: 2vw;
 }
 
 canvas {
