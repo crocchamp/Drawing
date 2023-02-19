@@ -4,26 +4,148 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DRAW OR DIE</title>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="paper-full.js"></script>
+    <script src="drawingScript.js"></script>
     <script type="text/paperscript" canvas="myCanvas">
-        var path = new Path();
-	// Give the stroke a color
-	path.strokeColor = 'black';
-	var start = new Point(100, 100);
-	// Move to start and draw a line from there
-	path.moveTo(start);
-	// Note the plus operator on Point objects.
-	// PaperScript does that for us, and much more!
-	path.lineTo(start + [ 100, -50 ]);
+        function createPaths() {
+            var paths = [];
+            var strokeColor = 'black';
+            var strokeWidth = 1;
+          
+            function onMouseDown(event) {
+              var path = new Path();
+              path.strokeColor = strokeColor;
+              path.strokeWidth = strokeWidth;
+              path.add(event.point);
+              paths.push(path);
+            }
+          
+            function onMouseDrag(event) {
+              var path = paths[paths.length - 1];
+              path.add(event.point);
+            }
+          
+            function setStrokeColor(color) {
+              strokeColor = color;
+            }
+          
+            function getStrokeColor() {
+              return strokeColor;
+            }
+          
+            function setStrokeWidth(width) {
+              strokeWidth = width;
+            }
+          
+            function getStrokeWidth() {
+              return strokeWidth;
+            }
+          
+            return {
+              onMouseDown: onMouseDown,
+              onMouseDrag: onMouseDrag,
+              getPaths: function() {
+                return paths;
+              },
+              setStrokeColor: setStrokeColor,
+              getStrokeColor: getStrokeColor,
+              setStrokeWidth: setStrokeWidth,
+              getStrokeWidth: getStrokeWidth
+            };
+          }
+          
+          var paths = createPaths();
+          
+          // Add event listeners to the canvas
+          view.onMouseDown = paths.onMouseDown;
+          view.onMouseDrag = paths.onMouseDrag;
+          
+          // Get the paths array
+          var myPaths = paths.getPaths();
+          
+          var width5Button = document.createElement('button');
+          width5Button.innerHTML = 'small';
+          width5Button.addEventListener('click', function() {
+              paths.setStrokeWidth(5);
+          });
+          
+          var strokeHolder = document.querySelector('#strokeHolder');
+          
+          
+          
+          // Create buttons to change the stroke color
+          var redButton = document.createElement('button');
+redButton.innerHTML = 'Red';
+redButton.setAttribute('id', 'red');
+redButton.addEventListener('click', function() {
+  paths.setStrokeColor('red');
+});
+
+var blueButton = document.createElement('button');
+blueButton.innerHTML = 'Blue';
+blueButton.setAttribute('id', 'blue');
+blueButton.addEventListener('click', function() {
+  paths.setStrokeColor('blue');
+});
+
+var yellowButton = document.createElement('button');
+yellowButton.innerHTML = 'Yellow';
+yellowButton.setAttribute('id', 'yellow');
+yellowButton.addEventListener('click', function() {
+  paths.setStrokeColor('yellow');
+});
+
+var greenButton = document.createElement('button');
+greenButton.innerHTML = 'Green';
+greenButton.setAttribute('id', 'green');
+greenButton.addEventListener('click', function() {
+  paths.setStrokeColor('green');
+});
+
+var orangeButton = document.createElement('button');
+orangeButton.innerHTML = 'Orange';
+orangeButton.setAttribute('id', 'orange');
+orangeButton.addEventListener('click', function() {
+  paths.setStrokeColor('orange');
+});
+
+var purpleButton = document.createElement('button');
+purpleButton.innerHTML = 'Purple';
+purpleButton.setAttribute('id', 'purple');
+purpleButton.addEventListener('click', function() {
+  paths.setStrokeColor('purple');
+});
+
+var eraserButton = document.createElement('button');
+eraserButton.innerHTML = 'Eraser';
+eraserButton.setAttribute('id', 'eraser');
+eraserButton.addEventListener('click', function() {
+  paths.setStrokeColor('white');
+});
+
+          
+          var palette = document.querySelector('#palette');
+          
+          // Add the buttons to the page
+          palette.appendChild(redButton);
+          palette.appendChild(blueButton);
+          palette.appendChild(yellowButton);
+          palette.appendChild(greenButton);
+          palette.appendChild(orangeButton);
+          palette.appendChild(purpleButton);
+          palette.appendChild(eraserButton);
+          
+          palette.appendChild(width5Button);
+          
     </script>
 </head>
 <body>
     <header>
         <!--Draw or die! Have to fill in so many pixels within
         a time limit or the screen turns red and "YOU DIED" appears -->
-        <h1>TIME TO DRAW</h1>
+        <h1>TIME TO DRAW OR DIE</h1>
     </header>
 
     <div id="artHolder">
@@ -55,13 +177,7 @@
     </div>
     
     <footer id="palette">
-        <p>r</p>
-        <p>b</p>
-        <p>y</p>
-        <p>g</p>
-        <p>p</p>
-        <p>o</p>
-        <p>b</p>
+        
     </footer>
 </body>
 </html>
