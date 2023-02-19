@@ -66,12 +66,42 @@
           var myPaths = paths.getPaths();
           
           var width5Button = document.createElement('button');
-          width5Button.innerHTML = 'small';
+          width5Button.innerHTML = '5';
           width5Button.addEventListener('click', function() {
               paths.setStrokeWidth(5);
           });
           
-          var strokeHolder = document.querySelector('#strokeHolder');
+          var width10Button = document.createElement('button');
+          width10Button.innerHTML = '10';
+          width10Button.addEventListener('click', function() {
+              paths.setStrokeWidth(10);
+          });
+          
+          var width25Button = document.createElement('button');
+          width25Button.innerHTML = '25';
+          width25Button.addEventListener('click', function() {
+              paths.setStrokeWidth(25);
+          });
+          
+          var width40Button = document.createElement('button');
+          width40Button.innerHTML = '40';
+          width40Button.addEventListener('click', function() {
+              paths.setStrokeWidth(40);
+          });
+          
+          var width70Button = document.createElement('button');
+          width70Button.innerHTML = '70';
+          width70Button.addEventListener('click', function() {
+              paths.setStrokeWidth(70);
+          });
+          
+          var brushSizeHolder = document.querySelector('#brushSizeHolder');
+          brushSizeHolder.appendChild(width5Button);
+          brushSizeHolder.appendChild(width10Button);
+          brushSizeHolder.appendChild(width25Button);
+          brushSizeHolder.appendChild(width40Button);
+          brushSizeHolder.appendChild(width70Button);
+          
           
           
           
@@ -136,8 +166,7 @@ eraserButton.addEventListener('click', function() {
           palette.appendChild(orangeButton);
           palette.appendChild(purpleButton);
           palette.appendChild(eraserButton);
-          
-          palette.appendChild(width5Button);
+
           
     </script>
 </head>
@@ -166,13 +195,7 @@ eraserButton.addEventListener('click', function() {
         </div>
     
         <div id="brushSizeHolder">
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+            
         </div>
     </div>
     
